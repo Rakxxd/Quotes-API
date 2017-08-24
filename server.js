@@ -9,6 +9,7 @@ var { User } = require('./models/user');
 
 var app = express();
 app.use(bodyparser.json());
+const port = process.env.PORT || 3000;
 
 app.post('/quotes', (req, res) => {
     var quote = new Quote({
@@ -108,6 +109,6 @@ app.patch('/quotes/:id', (req, res) => {
 
 
 
-app.listen(3000, () => {
-    console.log(`Started up at port 3000`);
+app.listen(port, () => {
+    console.log(`Started up at port 3000`,port);
 });
